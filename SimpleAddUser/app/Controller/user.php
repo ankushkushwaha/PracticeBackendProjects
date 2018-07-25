@@ -29,6 +29,10 @@ class user
 		echo "\naddUserFunction()";
 	}
 
+	public function userEmail($id) {
+		echo "\n userEmail() $id ";
+	}
+
 }
 		
 ?>
