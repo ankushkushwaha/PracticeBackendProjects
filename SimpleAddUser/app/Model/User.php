@@ -1,11 +1,15 @@
 <?php 
 
-class User {
- 
-	private $email;
- 
-	function __construct( $email) {
-		$this->email = $email;
+require "app/libs/Model.php";
+
+class User extends Model {
+  
+	function __construct() {
+
+		echo "User";
+
+		parent::__construct();	
+		// $this->email = $email;
 	}
  
 	function getEmail() {
