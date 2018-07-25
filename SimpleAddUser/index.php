@@ -3,27 +3,17 @@
 
 <?php
 
+echo "index";
 
-$url = rtrim($url, '/'); // trim all multiple '/' e.g in user/func////
+require 'app/libs/Bootstrap.php';
+// require "app/Model/User.php";
 
-$url = explode('/', $_GET['url']);
+ new Bootstrap();
 
-print_r($url);
+ echo "index end";
 
-require "app/Controller/".$url[0]. ".php";
+// new User();
 
-  $controller = new $url[0]();
-
-  $func = $url[1];
-  $param = $url[2];
-
-  if (isset($param)) { // for function with only one paramaters
-    $controller->{$func}($param);
-
-  } else  if (isset($func)) { // without paramaters
-
-      $controller->{$func}();
-  } 
   // $controller->addUser();
 ?>
 
