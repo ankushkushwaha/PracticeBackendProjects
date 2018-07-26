@@ -10,13 +10,13 @@ class Database extends PDO
 	
 	function __construct()
 	{
-		echo "Database";
+		echo "\nDatabase";
 
 		try {
     		$conn = new PDO("mysql:host=".HOST.";dbname=".DB_NAME, USERNAME, PASSWORD);
-   			 echo "Connected to DB at $host successfully.";
+   			 echo "\nConnected to DB at $host successfully";
 		} catch (PDOException $pe) {
-  			  die("Could not connect to the database $dbname :" . $pe->getMessage());
+  			  die("\nCould not connect to the database $dbname :" . $pe->getMessage());
 		}
 
 	}

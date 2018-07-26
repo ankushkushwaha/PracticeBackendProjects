@@ -10,7 +10,7 @@ class Model extends Database
 	function __construct()
 	{
 
-		echo "Model";
+		echo "\nModel";
 
 		parent::__construct();	
 

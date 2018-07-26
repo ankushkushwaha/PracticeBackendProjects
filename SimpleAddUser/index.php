@@ -3,14 +3,13 @@
 
 <?php
 
-echo "index";
+echo "\r\nindex";
 
 require 'app/libs/Bootstrap.php';
+require 'app/libs/Controller.php';
 // require "app/Model/User.php";
 
  new Bootstrap();
-
- echo "index end";
 
 // new User();
 
