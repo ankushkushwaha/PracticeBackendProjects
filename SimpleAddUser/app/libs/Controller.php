@@ -8,7 +8,7 @@ class Controller
 	
 	function __construct()
 	{
-		echo "\nBase Controller";
+		echo "\nBase Controller init";
 	}
 }
 ?>

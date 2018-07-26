@@ -9,11 +9,9 @@ class Model extends Database
 	
 	function __construct()
 	{
-
-		echo "\nModel";
-
 		parent::__construct();	
 
+		echo "\nBase Model init";
 
 	}
 } ?>

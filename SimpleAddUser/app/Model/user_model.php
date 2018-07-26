@@ -2,13 +2,14 @@
 
 require "app/libs/Model.php";
 
-class User extends Model {
+class User_Model extends Model {
   
 	function __construct() {
 
-		echo "User";
-
 		parent::__construct();	
+
+		echo "\nUser_Model init";
+
 		// $this->email = $email;
 	}
  

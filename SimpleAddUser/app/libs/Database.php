@@ -10,7 +10,7 @@ class Database extends PDO
 	
 	function __construct()
 	{
-		echo "\nDatabase";
+		echo "\nDatabase init";
 
 		try {
     		$conn = new PDO("mysql:host=".HOST.";dbname=".DB_NAME, USERNAME, PASSWORD);

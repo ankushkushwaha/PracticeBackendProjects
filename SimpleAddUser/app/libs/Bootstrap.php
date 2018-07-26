@@ -7,7 +7,7 @@ class Bootstrap {
 	function __construct() {
 		
 
-		echo "\nBootstrap";
+		echo "\nBootstrap init";
 
 		$url = $_GET['url'];
 		$url = rtrim($url, '/'); // trim all multiple '/' e.g in user/func////
@@ -29,10 +29,8 @@ class Bootstrap {
 			die ("\nFile $file Does not exist");
 			
 		}
-		echo "\nBootstrap";
 
-
-		  $controller = new $url[0]();
+		  $controller = new $url[0](); // init controller
 
 		  $func = $url[1];
 		  $param = $url[2];

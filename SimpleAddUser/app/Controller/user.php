@@ -14,8 +14,13 @@ class user extends Controller
 		
 	}
 
-	public function addUserFunction() {
-		echo "\naddUserFunction()";
+	public function other() {
+
+		echo "\nother()";
+
+		require "app/Model/user_model.php";
+
+		new User_Model();
 	}
 
 	public function userEmail($id) {

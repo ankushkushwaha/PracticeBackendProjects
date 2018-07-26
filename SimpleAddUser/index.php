@@ -3,16 +3,12 @@
 
 <?php
 
-echo "\r\nindex";
+// Use en Autoloader here to load files automatically.
 
 require 'app/libs/Bootstrap.php';
 require 'app/libs/Controller.php';
-// require "app/Model/User.php";
 
  new Bootstrap();
 
-// new User();
-
-  // $controller->addUser();
 ?>
 
