@@ -4,14 +4,13 @@
 
 require "Database.php";
 
-class Model extends Database
+class Model
 {
 	
 	function __construct()
 	{
-		parent::__construct();	
-
 		echo "\nBase Model init";
 
+		$this->db = new Database();
 	}
 } ?>
