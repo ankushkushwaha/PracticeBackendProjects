@@ -7,6 +7,7 @@
 
 require 'app/libs/Bootstrap.php';
 require 'app/libs/Controller.php';
+require "app/libs/Model.php";
 
  new Bootstrap();
 
