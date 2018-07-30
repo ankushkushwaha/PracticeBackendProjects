@@ -12,6 +12,15 @@ class Controller
 		
 	}
 
+	function renderView($folderName) {
+
+		$path = "app/View/".strtolower($folderName)."/index.php"; // model file path
+		require $path;
+
+		$this->model = new $modelName(); // init model
+
+	}
+
 	function loadModel($controllerName) {
 
 		$path = "app/Model/".strtolower($controllerName)."_model.php"; // model file path

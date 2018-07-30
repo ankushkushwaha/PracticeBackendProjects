@@ -12,11 +12,14 @@ class Login extends Controller
 		echo "\nLogin Controller Init";
 
 		$this->loadModel(get_class($this));
-		
+		$this->renderView(get_class($this));
+
 	}
 
 	function run() {
+		
 		$this->model->run();
+
 	}
 
 }

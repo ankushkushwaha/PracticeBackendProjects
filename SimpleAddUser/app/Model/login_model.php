@@ -15,17 +15,32 @@ class Login_Model extends Model
 
 	 public function run() {
 
-	 	echo "\n model run()";
-	 	$sql = $this->db->prepare("SELECT id FROM users WHERE 
-	 		email = :email AND password = :password");
+	 	$email = $_POST['email'];
+	 	$password = $_POST['password'];
 
-		$sql->execute(array(
-			':email' => $_POST['email'],
-			':password' => $_POST['password']
-			));
+		try {
+		 	$sql = $this->db->conn->prepare("SELECT id FROM users WHERE email = '$email' AND password = '$password'");
 
-		$data = $sql->fetchAll();
-		echo "$data";
+			$data = $sql->fetchAll();
+			echo "\n$data";
+			
+			$count = $sql->rowCount();
+			echo $count;
+
+			if ($count > 0) {
+				//login
+			} else {
+				// show error
+			}
+
+		}
+		catch(PDOException $e) {
+    		echo "Error: " . $e->getMessage();
+		}
+
+		
+
+		
 	 }
 }
 
