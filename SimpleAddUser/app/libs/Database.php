@@ -5,7 +5,7 @@ require 'app/Config/dbconfig.php';
 /**
  * 
  */
-class Database extends PDO
+class Database
 {
 	
 	function __construct()
@@ -13,7 +13,9 @@ class Database extends PDO
 		echo "\nDatabase init";
 
 		try {
-    		$conn = new PDO("mysql:host=".HOST.";dbname=".DB_NAME, USERNAME, PASSWORD);
+    		$this->conn = new PDO("mysql:host=".HOST.";dbname=".DB_NAME, USERNAME, PASSWORD);
+    		$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
    			 echo "\nConnected to DB at $host successfully";
 		} catch (PDOException $pe) {
   			  die("\nCould not connect to the database $dbname :" . $pe->getMessage());
