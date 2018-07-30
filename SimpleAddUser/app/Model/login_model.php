@@ -28,9 +28,11 @@ class Login_Model extends Model
 		    // while($row = $result->fetch_assoc()) {
 		    //     echo "\nid: " . $row["id"]. " - Name: " . $row["email"]. " " . $row["password"];
 		    // }
-		    
+
+		    return true;
+
 		} else {
-		    echo "0 results";
+		   	return false;
 		}
 	 }
 

@@ -12,13 +12,25 @@ class Login extends Controller
 		echo "\nLogin Controller Init";
 
 		$this->loadModel(get_class($this));
-		$this->renderView(get_class($this));
 
+	}
+
+	function open() {
+		$this->renderView(get_class($this));
 	}
 
 	function run() {
 		
-		$this->model->run();
+		if ($this->model->run()) {
+			// loged in
+
+			echo "\n loged in";
+			$this->renderView("dashboard");
+
+		} else {			
+			require "app/Controller/errorcontroller.php";
+			new ErrorController();
+		}
 
 	}
 
