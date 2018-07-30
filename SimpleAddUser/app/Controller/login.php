@@ -3,6 +3,11 @@
 /**
  * 
  */
+
+spl_autoload_register(function ($class_name) {
+		 include ROOT_PATH_CONTROLLER. '/'. $class_name . '.php';
+});
+
 class Login extends Controller
 {
 	function __construct()
@@ -28,7 +33,6 @@ class Login extends Controller
 			$this->renderView("dashboard");
 
 		} else {			
-			require "app/Controller/errorcontroller.php";
 			new ErrorController();
 		}
 

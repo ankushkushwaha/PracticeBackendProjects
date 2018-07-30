@@ -3,6 +3,7 @@
 /**
  * 
  */
+
 class Controller
 {
 
@@ -14,14 +15,14 @@ class Controller
 
 	function renderView($folderName) {
 
-		$path = "app/View/".strtolower($folderName)."/index.php"; // model file path
+		$path = ROOT_PATH_VIEW."/".strtolower($folderName)."/index.php"; // model file path
 		require $path;
 
 	}
 
 	function loadModel($controllerName) {
 
-		$path = "app/Model/".strtolower($controllerName)."_model.php"; // model file path
+		$path = ROOT_PATH_MODEL."/".strtolower($controllerName)."_model.php"; // model file path
 		require $path;
 
 		$modelName = $controllerName."_Model";

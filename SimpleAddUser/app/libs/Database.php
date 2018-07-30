@@ -1,6 +1,6 @@
 <?php
 
-require 'app/Config/dbconfig.php';
+require ROOT_PATH_CONFIG.'/dbconfig.php';
 
 /**
  * 
