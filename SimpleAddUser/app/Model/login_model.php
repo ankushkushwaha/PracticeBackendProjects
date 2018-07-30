@@ -18,22 +18,20 @@ class Login_Model extends Model
 	 	$email = $_POST['email'];
 	 	$password = $_POST['password'];
 
-	 	// echo "\n$email";
-	 	// echo "\n$password";
+		$statement = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+		echo "\n$statement";
 
-			$statement = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-			echo "\n$statement";
+	 	$result = $this->db->conn->query($statement);
 
-		 	$result = $this->db->conn->query($statement);
+	 	if ($result->num_rows > 0) {
 
-		 	if ($result->num_rows > 0) {
-
-			    while($row = $result->fetch_assoc()) {
-			        echo "\nid: " . $row["id"]. " - Name: " . $row["email"]. " " . $row["password"];
-			    }
-			} else {
-			    echo "0 results";
-			}
+		    // while($row = $result->fetch_assoc()) {
+		    //     echo "\nid: " . $row["id"]. " - Name: " . $row["email"]. " " . $row["password"];
+		    // }
+		    
+		} else {
+		    echo "0 results";
+		}
 	 }
 
 	public function __destruct()
