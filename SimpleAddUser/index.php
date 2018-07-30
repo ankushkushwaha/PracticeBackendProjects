@@ -1,6 +1,5 @@
 
 <!-- Source: https://www.youtube.com/watch?v=Aw28-krO7ZM -->
-
 <?php
 
 // Use en Autoloader here to load files automatically.

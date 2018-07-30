@@ -18,29 +18,22 @@ class Login_Model extends Model
 	 	$email = $_POST['email'];
 	 	$password = $_POST['password'];
 
-		try {
-		 	$sql = $this->db->conn->prepare("SELECT id FROM users WHERE email = '$email' AND password = '$password'");
+	 	// echo "\n$email";
+	 	// echo "\n$password";
 
-			$data = $sql->fetchAll();
-			echo "\n$data";
-			
-			$count = $sql->rowCount();
-			echo $count;
+			$statement = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+			echo "\n$statement";
 
-			if ($count > 0) {
-				//login
+		 	$result = $this->db->conn->query($statement);
+
+		 	if ($result->num_rows > 0) {
+
+			    while($row = $result->fetch_assoc()) {
+			        echo "\nid: " . $row["id"]. " - Name: " . $row["email"]. " " . $row["password"];
+			    }
 			} else {
-				// show error
+			    echo "0 results";
 			}
-
-		}
-		catch(PDOException $e) {
-    		echo "Error: " . $e->getMessage();
-		}
-
-		
-
-		
 	 }
 }
 

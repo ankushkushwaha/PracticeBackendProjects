@@ -11,16 +11,22 @@ class Database
 	function __construct()
 	{
 		echo "\nDatabase init";
+    	
+    	$this->conn = new mysqli(HOST, USERNAME, PASSWORD, DB_NAME);
 
-		try {
-    		$this->conn = new PDO("mysql:host=".HOST.";dbname=".DB_NAME, USERNAME, PASSWORD);
-    		$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   			if ($this->conn->connect_error) {
+  		 		 die("\nConnection to DB failed: " . $conn->connect_error);
+			} else {
+				echo "\nConnnection to DB Success";
+			}
 
-   			 echo "\nConnected to DB at $host successfully";
-		} catch (PDOException $pe) {
-  			  die("\nCould not connect to the database $dbname :" . $pe->getMessage());
-		}
+	}
 
+	public function __destruct()
+	{
+		echo "\nDatabase Connection closed";
+
+	   	mysql_close($this->conn);
 	}
 }
 ?>
