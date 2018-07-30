@@ -15,5 +15,11 @@ class ErrorController extends Controller
 		$this->renderView(get_class($this));
 
 	}
+
+	public function __destruct()
+	{
+		echo "\nErrorController deinit";
+
+	}
 }
 ?>
