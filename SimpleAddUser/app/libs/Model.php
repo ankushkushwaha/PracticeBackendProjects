@@ -13,4 +13,10 @@ class Model
 
 		$this->db = new Database();
 	}
+
+	public function __destruct()
+	{
+		echo "\nBase Model deinit";
+
+	}
 } ?>

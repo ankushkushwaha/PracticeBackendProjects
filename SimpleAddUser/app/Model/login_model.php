@@ -35,6 +35,13 @@ class Login_Model extends Model
 			    echo "0 results";
 			}
 	 }
+
+	public function __destruct()
+	{
+		echo "\nLogin Model deinit";
+
+	}
+
 }
 
 ?>

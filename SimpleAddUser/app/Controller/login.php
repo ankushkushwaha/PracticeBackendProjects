@@ -22,6 +22,12 @@ class Login extends Controller
 
 	}
 
+	public function __destruct()
+	{
+		echo "\nLogin Controller deinit";
+
+	}
+
 }
 		
 ?>
